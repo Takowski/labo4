@@ -46,16 +46,16 @@ char* inverseWord() {
 // Labo 4.3
 
 void palindrome() {
-    int strl = 0;
+    int len = 0;
     char word[30];
     int is_palindrome = 1;
 printf("ecrire un mot pour verifier si c'est un palindrome :\n");
     fgets(word, 30,stdin);
 
-    while (word[strl] != '\0' && word[strl] != '\n') {
-        strl++;
+    while (word[len] != '\0' && word[len] != '\n') {
+        len++;
     }
-    for (int i = 0, j = strl-1;  i < j ; i++, j--) {
+    for (int i = 0, j = len-1;  i < j ; i++, j--) {
         if (word[i] != word[j]) {
             is_palindrome = 0;
             break;
