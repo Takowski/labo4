@@ -1,30 +1,46 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-void asciiToChar();
+int asciiToChar();
 
-void inverseWord();
+char* inverseWord();
 
 void palindrome();
 
 int main(void) {
-    // asciiToChar();
-    // inverseWord();
-    palindrome();
+    char *reverse=inverseWord();
+    // printf("Le code ASCII de ce caractère est :%d \n", asciiToChar());
+    printf(" le mot inversé est : %s \n",reverse);
+    // palindrome();
+    free(reverse);
     return 0;
 }
 
 // Labo 4.1
-void asciiToChar() {
+int asciiToChar() {
     printf("Ecrire un caractère :\n");
     int c = getchar();
-    printf("Le code ASCII de ce caractère est : %d\n", c);
+    return c;
 }
 
 // Labo 4.2
-void inverseWord() {
+char* inverseWord() {
     char word[20];
+    printf("Introduire un mot:\n");
     fgets(word, 20,stdin);
-    printf("%s", word);
+    size_t len=strlen(word);
+    if (len > 0 && word[len - 1] == '\n') {
+        word[len - 1] = '\0';
+        len--;
+    }
+    char *reverse=malloc(sizeof(char)*(len+1));
+    for (int i=0 ,j=len-1;i<len;i++,j--) {
+        reverse[i]=word[j];
+    }
+    reverse[len]='\0';
+    return reverse;
+
 }
 
 // Labo 4.3
