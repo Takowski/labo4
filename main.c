@@ -67,3 +67,9 @@ bool palindrome() {
 }
 
 // Labo 4.4
+
+void voyelle() {
+    char word[20];
+    printf("Introduisez un mot: \n");
+    fgets(word, 20,stdin);
+    }
