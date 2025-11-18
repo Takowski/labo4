@@ -9,12 +9,22 @@ char *inverseWord();
 
 bool palindrome();
 
+void voyelle();
+
+size_t sizeOfArray(char const *array1, char const
+                   *array2);
+
 int main(void) {
     // char *reverse = inverseWord();
+    char *sizeArray1 = "Bonjour comment allez vous";
+    char *sizeArray2 = "Ca va bien et vous";
+    char *sizeArray3 = "Ca va bien et vous";
     // printf("Le code ASCII de ce caractère est :%d \n", asciiToChar());
     // printf(" le mot inversé est : %s \n", reverse);
-    printf("%s", palindrome() ? "est un palindrome" : "n'est pas un palindrome");
+    // printf("%s", palindrome() ? "est un palindrome" : "n'est pas un palindrome");
     // free(reverse);
+    // voyelle();
+    printf("%zu", sizeOfArray(sizeArray3, sizeArray2));
     return 0;
 }
 
@@ -70,6 +80,28 @@ bool palindrome() {
 
 void voyelle() {
     char word[20];
+    int i = 0, countVoyelle = 0;
+
     printf("Introduisez un mot: \n");
     fgets(word, 20,stdin);
+    while (word[i] != '\0' && word[i] != '\n') {
+        i++;
+        if (word[i] == 'a' || word[i] == 'e' || word[i] == 'i' || word[i] == 'o' || word[i] == 'u' || word[i] == 'y') {
+            countVoyelle++;
+        }
     }
+    printf("Nombre de voyelles: %d ", countVoyelle);
+}
+
+// Labo 4.5
+
+size_t sizeOfArray(char const *array1, char const *array2) {
+    int const equal = strcasecmp(array1, array2);
+    return (equal == 0) ? strlen(array1) : (size_t) 0;
+}
+
+//Labo 4.6
+
+bool compareArray(char const *array1, char const *array2) {
+
+}
