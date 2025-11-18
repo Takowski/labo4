@@ -18,9 +18,9 @@ void selectionMenu();
 
 int main(void) {
     // char *reverse = inverseWord();
-    char *sizeArray1 = "Bonjour comment allez vous";
-    char *sizeArray2 = "Ca va bien et vous";
-    char *sizeArray3 = "Ca va bien et vous";
+    // char *sizeArray1 = "Bonjour comment allez vous";
+    // char *sizeArray2 = "Ca va bien et vous";
+    // char *sizeArray3 = "Ca va bien et vous";
     // printf("Le code ASCII de ce caractère est :%d \n", asciiToChar());
     // printf(" le mot inversé est : %s \n", reverse);
     // printf("%s", palindrome() ? "est un palindrome" : "n'est pas un palindrome");
@@ -46,11 +46,11 @@ char *inverseWord() {
     size_t len = strlen(word);
 
     if (len > 0 && word[len - 1] == '\n') {
-        word[len - 1] = '\0';
+        word[len-1] = '\0';
         len--;
     }
     char *reverse = malloc(sizeof(char) * (len + 1));
-    for (int i = 0, j = len - 1; i < len; i++, j--) {
+    for (size_t i = 0, j = len - 1; i < len; i++, j--) {
         reverse[i] = word[j];
     }
     reverse[len] = '\0';
