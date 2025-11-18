@@ -14,6 +14,8 @@ void voyelle();
 size_t sizeOfArray(char const *array1, char const
                    *array2);
 
+void selectionMenu();
+
 int main(void) {
     // char *reverse = inverseWord();
     char *sizeArray1 = "Bonjour comment allez vous";
@@ -24,8 +26,9 @@ int main(void) {
     // printf("%s", palindrome() ? "est un palindrome" : "n'est pas un palindrome");
     // free(reverse);
     // voyelle();
-    printf("%zu", sizeOfArray(sizeArray3, sizeArray2));
-    return 0;
+    // printf("%zu", sizeOfArray(sizeArray3, sizeArray2));
+    // return 0;
+    selectionMenu();
 }
 
 // Labo 4.1
@@ -102,3 +105,47 @@ size_t sizeOfArray(char const *array1, char const *array2) {
 
 //Labo 4.6
 
+//Labo 4.7
+
+void selectionMenu() {
+        int choice;
+        printf("Menu:\n");
+        printf("1. ASCII to Char\n");
+        printf("2. Inverse Word\n");
+        printf("3. Palindrome\n");
+        printf("4. Voyelle\n");
+        printf("5. Comparaison de la taille de 2 strings\n");
+        printf("0. Quit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar();
+
+        switch (choice) {
+            case 1:
+                printf("Le code ASCII de ce caractère est : %d\n", asciiToChar());
+                break;
+            case 2: {
+                char *reverse = inverseWord();
+                printf("Le mot inversé est : %s\n", reverse);
+                free(reverse);
+                break;
+            }
+            case 3:
+                printf("%s\n", palindrome() ? "est un palindrome" : "n'est pas un palindrome");
+                break;
+            case 4:
+                voyelle();
+                break;
+            case 5: {
+                char *a = "Bonjour";
+                char *b = "Bonjour";
+                printf("Taille: %zu\n", sizeOfArray(a, b));
+                break;
+            }
+            case 0:
+                printf("Au revoir !\n");
+                break;
+            default:
+                printf("Choix invalide.\n");
+        }
+}
