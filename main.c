@@ -102,6 +102,3 @@ size_t sizeOfArray(char const *array1, char const *array2) {
 
 //Labo 4.6
 
-bool compareArray(char const *array1, char const *array2) {
-
-}
